@@ -2,22 +2,28 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import {BrowserModule} from "@angular/platform-browser"
 import { BookModule } from './book/book.module';
-import { CustomerLoginComponent } from './customer/customer-login.component';
 import { CustomerModule } from './customer/customer.module';
+import { WelcomeComponent } from './welcome.component';
+import { RouterModule } from '@angular/router';
+import { appRoutes } from './app.router';
+import { ResourceNotFoundComponent } from './notfound.component';
 @NgModule({
   declarations:[
-    AppComponent
+    AppComponent,
+    WelcomeComponent,   
+    ResourceNotFoundComponent
   ],
   providers:[
 
   ],
   bootstrap:[
-    AppComponent
+    AppComponent,
   ],  
   imports:[
     BrowserModule,
     BookModule,
-    CustomerModule
+    CustomerModule,
+    RouterModule.forRoot(appRoutes)
   ]
 })
 
