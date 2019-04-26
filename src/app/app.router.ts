@@ -5,5 +5,6 @@ import { ResourceNotFoundComponent } from './notfound.component';
 
 export const appRoutes:Routes=[
     {path:"home",component :WelcomeComponent},
+    {path:"",component :WelcomeComponent},
     {path:"**",component:ResourceNotFoundComponent}
 ]

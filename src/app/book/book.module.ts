@@ -4,6 +4,9 @@ import { BookListComponent } from './book-list.component';
 import { BookDetailsComponent } from './book-details.component';
 import { RouterModule } from '@angular/router';
 import { bookRoutes } from './book.route';
+import { HttpClientModule } from '@angular/common/http';
+import { BookService } from './book.service';
+
 
 
 @NgModule({
@@ -14,8 +17,10 @@ import { bookRoutes } from './book.route';
     
 
     imports:[BrowserModule,
-        RouterModule.forChild(bookRoutes)
+        RouterModule.forChild(bookRoutes),
+        HttpClientModule
     ],
+    providers:[BookService],
     exports:[BookListComponent,
         BookDetailsComponent,
         RouterModule
